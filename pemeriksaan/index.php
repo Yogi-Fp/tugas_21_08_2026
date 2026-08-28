@@ -27,7 +27,7 @@ $rows = db()->query('SELECT k.*,p.nama pasien,d.nama dokter FROM pemeriksaan k J
                     </td>
                     <td class="actions"><a class="btn secondary"
                             href="form.php?id=<?= $r['id'] ?>">Detail</a><?php if ($r['status'] !== 'dibayar'): ?><a
-                                class="btn warning" href="/CRUDP/pembayaran/form.php?id=<?= $r['id'] ?>">Bayar</a><?php endif; ?>
+                                class="btn warning" href="/pembayaran/form.php?id=<?= $r['id'] ?>">Bayar</a><?php endif; ?>
                     </td>
                 </tr><?php endforeach; ?><?php if (!$rows): ?>
                 <tr>

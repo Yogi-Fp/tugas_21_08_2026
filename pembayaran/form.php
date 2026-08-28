@@ -4,7 +4,7 @@ $pdo = db();
 $id = (int) ($_GET['id'] ?? 0);
 $s = $pdo->prepare('SELECT k.*,p.nama pasien,p.no_rm,d.nama dokter,d.tarif FROM pemeriksaan k JOIN pasien p ON p.id=k.pasien_id JOIN dokter d ON d.id=k.dokter_id WHERE k.id=?');
 $s->execute([$id]);
-$k = $s->fetch() ?: redirect('/CRUDP/pemeriksaan/index.php');
+$k = $s->fetch() ?: redirect('/pemeriksaan/index.php');
 if ($k['status'] === 'dibayar') {
     flash('error', 'Kunjungan ini sudah dibayar.');
     redirect('index.php');
@@ -70,6 +70,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </select></label><label>Nominal Dibayar<input type="number" min="<?= ceil($total) ?>" name="bayar"
                 value="<?= ceil($total) ?>" required></label>
         <div class="full actions"><button class="btn">Simpan Pembayaran & Cetak Struk</button><a class="btn secondary"
-                href="/CRUDP/pemeriksaan/index.php">Batal</a></div>
+                href="/pemeriksaan/index.php">Batal</a></div>
     </form>
 </section><?php require __DIR__ . '/../includes/footer.php'; ?>

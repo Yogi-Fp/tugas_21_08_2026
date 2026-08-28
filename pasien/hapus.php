@@ -6,4 +6,4 @@ try {
 } catch (PDOException $e) {
     flash('error', 'Pasien tidak dapat dihapus karena sudah memiliki riwayat kunjungan.');
 }
-redirect('/CRUDP/pasien/index.php');
+redirect('/pasien/index.php');

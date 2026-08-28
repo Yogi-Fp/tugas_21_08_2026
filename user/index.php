@@ -48,7 +48,7 @@ $active = count(array_filter($visits, fn($v) => $v['status'] !== 'dibayar')); ?>
                         <td><span class="badge <?= $v['status'] === 'dibayar' ? 'done' : '' ?>"><?= e(ucfirst($v['status'])) ?></span>
                         </td>
                         <td><?php if (in_array($v['status'], ['selesai', 'diperiksa'], true)): ?><a class="btn warning"
-                                    href="/CRUDP/pembayaran/form.php?id=<?= $v['id'] ?>">Bayar
+                                    href="/pembayaran/form.php?id=<?= $v['id'] ?>">Bayar
                                     Sekarang</a><?php elseif ($v['status'] === 'menunggu'): ?><span class="muted">Menunggu proses
                                     klinik</span><?php else: ?><span class="badge done">Lunas</span><?php endif; ?></td>
                     </tr><?php endforeach; ?><?php if (!$visits): ?>

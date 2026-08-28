@@ -6,4 +6,4 @@ try {
 } catch (PDOException $e) {
     flash('error', 'Obat tidak dapat dihapus karena dipakai pada pemeriksaan.');
 }
-redirect('/CRUDP/obat/index.php');
+redirect('/obat/index.php');

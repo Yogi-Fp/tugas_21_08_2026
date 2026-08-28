@@ -3,7 +3,7 @@ require_once __DIR__ . '/../includes/header.php';
 $rows = db()->query('SELECT b.*,p.nama pasien,k.no_kunjungan FROM pembayaran b JOIN pemeriksaan k ON k.id=b.pemeriksaan_id JOIN pasien p ON p.id=k.pasien_id ORDER BY b.id DESC')->fetchAll(); ?>
 <section class="panel">
     <div class="row">
-        <h2>Riwayat Pembayaran</h2><a class="btn" href="/CRUDP/pemeriksaan/index.php">+ Proses Pembayaran</a>
+        <h2>Riwayat Pembayaran</h2><a class="btn" href="/pemeriksaan/index.php">+ Proses Pembayaran</a>
     </div>
     <table>
         <thead>

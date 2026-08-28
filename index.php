@@ -2,7 +2,7 @@
 require_once __DIR__ . '/config/app.php';
 require_login();
 if ($_SESSION['user']['role'] === 'user')
-    redirect('/CRUDP/user/index.php');
+    redirect('/user/index.php');
 $title = 'Dashboard';
 require_once __DIR__ . '/includes/header.php';
 $pdo = db();
@@ -28,7 +28,7 @@ $visits = $pdo->query("SELECT p.no_kunjungan,p.tanggal,p.status,ps.nama pasien,d
 </section>
 <section class="panel" style="margin-top:22px">
     <div class="row">
-        <h2>Kunjungan Terbaru</h2><a class="btn" href="/CRUDP/pemeriksaan/form.php">+ Daftarkan Pasien</a>
+        <h2>Kunjungan Terbaru</h2><a class="btn" href="/pemeriksaan/form.php">+ Daftarkan Pasien</a>
     </div>
     <table>
         <thead>

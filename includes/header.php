@@ -2,7 +2,7 @@
 require_login();
 $section = basename(dirname($_SERVER['SCRIPT_NAME']));
 if ($_SESSION['user']['role'] === 'user' && !in_array($section, ['user', 'pembayaran'], true))
-    redirect('/CRUDP/user/index.php');
+    redirect('/user/index.php');
 $title = $title ?? 'SehatCare'; ?>
 <!doctype html>
 <html lang="id">
@@ -12,24 +12,24 @@ $title = $title ?? 'SehatCare'; ?>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title><?= e($title) ?> · SehatCare</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="/CRUDP/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 
 <body>
-    <aside class="sidebar"><a class="brand" href="/CRUDP/index.php"><span><i class="fa-solid fa-heart-pulse"></i></span>
+    <aside class="sidebar"><a class="brand" href="/index.php"><span><i class="fa-solid fa-heart-pulse"></i></span>
             SehatCare<small>KLINIK MANAGEMENT</small></a>
         <nav>
-            <?php if ($_SESSION['user']['role'] === 'user'): ?><a href="/CRUDP/user/index.php"><i
-                        class="fa-solid fa-house"></i> Portal Saya</a><a href="/CRUDP/user/booking.php"><i
-                        class="fa-solid fa-calendar-plus"></i> Buat Janji</a><?php else: ?><a href="/CRUDP/index.php">▦
-                    Dashboard</a><a href="/CRUDP/pasien/index.php">♙ Data Pasien</a><a href="/CRUDP/obat/index.php">▣ Obat &
-                    Stok</a><a href="/CRUDP/pemeriksaan/index.php">✚ Pemeriksaan</a><a href="/CRUDP/pembayaran/index.php">▤
+            <?php if ($_SESSION['user']['role'] === 'user'): ?><a href="/user/index.php"><i
+                        class="fa-solid fa-house"></i> Portal Saya</a><a href="/user/booking.php"><i
+                        class="fa-solid fa-calendar-plus"></i> Buat Janji</a><?php else: ?><a href="/index.php">▦
+                    Dashboard</a><a href="/pasien/index.php">♙ Data Pasien</a><a href="/obat/index.php">▣ Obat &
+                    Stok</a><a href="/pemeriksaan/index.php">✚ Pemeriksaan</a><a href="/pembayaran/index.php">▤
                     Pembayaran</a><?php endif; ?>
-            <?php if ($_SESSION['user']['role'] === 'admin'): ?><a href="/CRUDP/users.php">♧ Pengguna</a><?php endif; ?>
+            <?php if ($_SESSION['user']['role'] === 'admin'): ?><a href="/users.php">♧ Pengguna</a><?php endif; ?>
         </nav>
         <div class="profile">
             <b><?= e($_SESSION['user']['nama']) ?></b><small><?= e(ucfirst($_SESSION['user']['role'])) ?></small><a
-                href="/CRUDP/auth/logout.php">Keluar →</a></div>
+                href="/auth/logout.php">Keluar →</a></div>
     </aside>
     <main>
         <header>
